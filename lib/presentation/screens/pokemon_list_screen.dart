@@ -48,33 +48,34 @@ class _PokemonListScreenState extends State<PokemonListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Header Section
-            _buildHeader(),
-            
-            // Search Bar
-            _buildSearchBar(),
-            
-            // Pokemon Count
-            _buildPokemonCount(),
-            
-            // Pokemon List
-            Expanded(
-              child: _buildPokemonList(),
-            ),
-          ],
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Header Section (extends into status bar)
+          _buildHeader(),
+          
+          // Search Bar
+          _buildSearchBar(),
+          
+          // Pokemon Count
+          _buildPokemonCount(),
+          
+          // Pokemon List
+          Expanded(
+            child: _buildPokemonList(),
+          ),
+        ],
       ),
     );
   }
 
   Widget _buildHeader() {
+    // Get the status bar height to add proper padding
+    final statusBarHeight = MediaQuery.of(context).padding.top;
+    
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 16),
+      padding: EdgeInsets.fromLTRB(20, statusBarHeight + 16, 20, 16),
       decoration: BoxDecoration(
         color: AppTheme.primaryColor,
         borderRadius: const BorderRadius.only(
