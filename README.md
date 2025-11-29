@@ -433,9 +433,7 @@ This project implements industry-standard best practices:
 
 For any questions, feedback, or collaboration opportunities, please reach out:
 
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+- **Email**: [sakibahmed21@iut-dhaka.edu](mailto:sakibahmed21@iut-dhaka.edu)
 
 ---
 
