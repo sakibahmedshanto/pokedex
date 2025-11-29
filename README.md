@@ -3,15 +3,54 @@
 PokéDex is a Flutter application that displays comprehensive Pokémon information using the official [PokéAPI](https://pokeapi.co/). Built with clean architecture principles and BLoC pattern for state management, this app demonstrates professional Flutter development practices including proper error handling, loading states, and responsive UI design.
 
 ## Table of Contents
+- [GIFs](#gifs)
+- [Screenshots](#screenshots)
 - [Features](#features)
 - [Technical Stack](#technical-stack)
 - [Project Structure / Architecture](#project-structure--architecture)
-- [GIFs](#gifs)
-- [Screenshots](#screenshots)
 - [Generative AI Usage](#generative-ai-usage)
+- [Download APK](#download-apk)
 - [How to Run](#how-to-run)
 - [Best Practices](#best-practices)
 - [Contact](#contact)
+
+## GIFs
+
+Check out this GIF showcasing the app in action:
+
+### App Demo
+<p align="center">
+  <img src="screenshots/gif/pokedex_gif.gif" width="350" alt="PokéDex App Demo">
+</p>
+
+## Screenshots
+
+Here are screenshots from the app, organized by feature:
+
+### App Icon
+<p align="center">
+  <img src="screenshots/app_on_app_drawer.jpg" width="300" alt="App Icon on Drawer">
+</p>
+
+### Home Screen
+<p align="center">
+  <img src="screenshots/home_screen.jpg" width="300" alt="Home Screen">
+</p>
+
+### Search Functionality
+<p align="center">
+  <img src="screenshots/pokemon_search.jpg" width="300" alt="Pokemon Search">
+</p>
+
+### Detail Screen
+<p align="center">
+  <img src="screenshots/pokemon_details.jpg" width="300" alt="Pokemon Details">
+</p>
+
+### Loading States
+| List Loading | Detail Loading |
+|--------------|----------------|
+| <img src="screenshots/pokemon_loading_circular_progress_indicator.jpg" width="300" alt="Pokemon List Loading"> | <img src="screenshots/pokemon_details_loading_screen.jpg" width="300" alt="Detail Loading"> |
 
 ## Features
 
@@ -168,43 +207,6 @@ UI Widgets (Screens/Widgets)
 4. **Immutable States**: Using Equatable ensures proper state comparison and prevents unnecessary rebuilds
 5. **Widget Composition**: Reusable widgets (PokemonCard, LoadingWidget, ErrorWidget) for code reusability
 
-## GIFs
-
-Check out these GIFs showcasing the app in action:
-
-### App Overview
-![App Demo](screenshots/gif/demo.gif)
-
-### Search Functionality
-![Search Demo](screenshots/gif/search.gif)
-
-### Navigation Flow
-![Navigation Demo](screenshots/gif/navigation.gif)
-
-## Screenshots
-
-Here are screenshots from the app, organized by feature:
-
-### Home Screen and List View
-| Pokémon List Screen | Horizontal Scrolling | Empty Search State |
-|---------------------|----------------------|--------------------|
-| ![Home Screen](screenshots/home_screen.png) | ![Horizontal Scroll](screenshots/horizontal_scroll.png) | ![Empty Search](screenshots/empty_search.png) |
-
-### Search Functionality
-| Search Bar | Search Results | Clear Search |
-|------------|----------------|--------------|
-| ![Search Bar](screenshots/search_bar.png) | ![Search Results](screenshots/search_results.png) | ![Clear Search](screenshots/clear_search.png) |
-
-### Detail Screen
-| Pokémon Detail | Stats View | Abilities View |
-|----------------|------------|----------------|
-| ![Detail Screen](screenshots/detail_screen.png) | ![Stats View](screenshots/stats_view.png) | ![Abilities View](screenshots/abilities_view.png) |
-
-### Loading and Error States
-| Loading State | Error State | Pull to Refresh |
-|---------------|-------------|-----------------|
-| ![Loading](screenshots/loading.png) | ![Error](screenshots/error.png) | ![Pull Refresh](screenshots/pull_refresh.png) |
-
 ## Generative AI Usage
 
 This project was developed with assistance from AI coding tools. Here's an honest explanation of how AI was utilized:
@@ -299,6 +301,37 @@ Using AI in this project helped me:
 
 This project demonstrates that AI is a powerful tool for learning and productivity, but understanding the code and making architectural decisions is crucial for becoming a better developer.
 
+## Download APK
+
+Ready-to-install APK files are available for download. Choose the appropriate version based on your device architecture:
+
+### 📱 Recommended: Universal APK
+**[PokeDex.apk](apks/PokeDex.apk)** - Universal APK compatible with most Android devices (Recommended for most users)
+
+### 📦 Architecture-Specific APKs
+
+If the universal APK doesn't work on your device, try these architecture-specific builds:
+
+| APK File | Architecture | Best For |
+|----------|--------------|----------|
+| [PokeDex.apk](apks/PokeDex.apk) | Universal | Most Android devices (Recommended) |
+| [app-armeabi-v7a-release.apk](apks/app-armeabi-v7a-release.apk) | ARM 32-bit | Older Android devices with 32-bit processors |
+| [app-x86_64-release.apk](apks/app-x86_64-release.apk) | x86 64-bit | Android emulators and x86-based devices |
+
+### 🌐 Google Drive Download
+
+All APK files are also available on Google Drive for easy download:
+
+**[📥 Download from Google Drive](https://drive.google.com/drive/folders/1xmHE8VpGnSHUXpO_iEroYkWf9Z7gkA73?usp=sharing)**
+
+### Installation Instructions
+
+1. **Download** the APK file to your Android device
+2. **Enable** "Install from Unknown Sources" in your device settings
+3. **Open** the downloaded APK file
+4. **Tap** "Install" and wait for the installation to complete
+5. **Launch** the PokéDex app from your app drawer
+
 ## How to Run
 
 ### Prerequisites
@@ -334,6 +367,18 @@ flutter build apk --release
 ```
 
 The APK will be generated at: `build/app/outputs/flutter-apk/app-release.apk`
+
+To build architecture-specific APKs:
+
+```bash
+# Build for all architectures
+flutter build apk --split-per-abi
+
+# Build for specific architecture
+flutter build apk --target-platform android-arm64  # 64-bit ARM
+flutter build apk --target-platform android-arm   # 32-bit ARM
+flutter build apk --target-platform android-x64   # 64-bit x86
+```
 
 ### Build for iOS
 
